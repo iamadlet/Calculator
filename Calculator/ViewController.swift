@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     @IBAction func plus(_ sender: Any) {
         let a = textField.text!
         let b = textField2.text!
-        if let numberA = Int(a), let numberB = Int(b) {
+        if let numberA = Double(a), let numberB = Double(b) {
             let sum = numberA + numberB
             label.text = String(sum)
         } else {
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     @IBAction func minus(_ sender: Any) {
         let a = textField.text!
         let b = textField2.text!
-        if let numberA = Int(a), let numberB = Int(b) {
+        if let numberA = Double(a), let numberB = Double(b) {
             let sum = numberA - numberB
             label.text = String(sum)
         } else {
@@ -41,5 +41,29 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func multiply(_ sender: Any) {
+        let a = textField.text!
+        let b = textField2.text!
+        if let numberA = Double(a), let numberB = Double(b) {
+            let sum = numberA * numberB
+            label.text = String(sum)
+        } else {
+            label.text = "Введите 2 числа"
+        }
+    }
+    
+    @IBAction func divide(_ sender: Any) {
+        let a = textField.text!
+        let b = textField2.text!
+        if let numberA = Double(a), let numberB = Double(b), numberB != 0 {
+            let sum = numberA / numberB
+            label.text = String(sum)
+        } else {
+            label.text = "Введите 2 числа"
+            if b == "0" {
+                label.text = "На ноль делить нельзя"
+            }
+        }
+    }
 }
 
